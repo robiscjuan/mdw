@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/reservaOK', function () {
+    return view('reservaOK');
+});
+
+Route::get('/reservaKO', function () {
+    return view('reservaKO');
+});
