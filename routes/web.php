@@ -22,3 +22,7 @@ Route::get('/reservaOK', function () {
 Route::get('/reservaKO', function () {
     return view('reservaKO');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
