@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <title>Title</title>
+</head>
+<body>
+<form action="index.php/booking/create" method="POST">
+    <!--<input type="hidden" name="_token" value="{{{ csrf_token() }}}" />-->
+    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="mt10">Start Date:</div>
+            <input type="date" required name="starting_date" value="" placeholder="From" class="request-input request-date mb10">
+        </div>
+        <div class="col-sm-4">
+            <div class="mt10">Quantity</div>
+            <input type="number" required name="quantity" value="" placeholder="Quantity" class="request-input mb10">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-block button-orange">Get quotes now</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

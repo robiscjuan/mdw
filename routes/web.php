@@ -22,3 +22,5 @@ Route::get('/reservaOK', function () {
 Route::get('/reservaKO', function () {
     return view('reservaKO');
 });
+
+Route::post('/booking/create', 'BookingController@store');
