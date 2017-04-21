@@ -15,11 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/reservaOK', function () {
+Route::get('/formulario-alta', function () {
+    return view('formularioAlta');
+});
+
+Route::get('/reserva-correcta', function () {
     return view('reservaOK');
 });
 
-Route::get('/reservaKO', function () {
+Route::get('/reserva-errónea', function () {
     return view('reservaKO');
 });
 
