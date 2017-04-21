@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('inicio');
+})->name('home');
 
 Route::get('/formulario-alta', function () {
     return view('formularioAlta');
@@ -26,6 +26,22 @@ Route::get('/reserva-correcta', function () {
 Route::get('/reserva-errónea', function () {
     return view('reservaKO');
 });
+
+Route::get('/instalaciones', function () {
+    return view('instalaciones');
+})->name('instalaciones');
+
+Route::get('/login-cliente', function () {
+    return view('login');
+})->name('loginCliente');
+
+Route::get('/registro', function () {
+    return view('registro');
+})->name('registro');
+
+Route::get('/reserva', function () {
+    return view('reserva');
+})->name('reserva');
 
 Auth::routes();
 
