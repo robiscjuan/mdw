@@ -51,7 +51,7 @@
 
         .links > a {
             color: #636b6f;
-            padding: 0 25px;
+            padding: 0 25px;xº
             font-size: 12px;
             font-weight: 600;
             letter-spacing: .1rem;
@@ -68,7 +68,8 @@
 <div class="flex-center position-ref full-height">
 
     <div class="content">
-        <div class="title m-b-md">
+        {{--<div class="title m-b-md">--}}
+            <div class="alert alert-danger">
             La Reserva se ha completado correctamente
         </div>
     </div>
