@@ -1,65 +1,113 @@
-<head>
-    <title>form</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+@extends('layouts.app')
 
-</head>
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Formulario de Alta</div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                            {{ csrf_field() }}
+                            <div class="form-group{{ $errors->has('id') ? ' has-error' : '' }}">
+                                <label for="id" class="col-md-4 control-label">NIF</label>
 
+                                <div class="col-md-6">
+                                    <input id="id" type="id" class="form-control" name="id" required>
+                                    @if ($errors->has('id'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('id') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
 
-<link rel="stylesheet" href="css/app.css"/>
-<div class="container">
-    <h2>Registro</h2>
-    {{--<form action="" name="registration">--}}
-    <form class="form-horizontal">
-        <div class="col-sm-offset-2 col-sm-10">
-            <div class="form-group">
-                <div class="col-sm-2">
-                    <label for="id">NIF</label>
-                    <input type="id" name="id" id="id" placeholder="<NIF>" class="form-control"
-                           data-validation="length alphanumeric"
-                           data-validation-length="max10"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-4">
-                    <label for="firstname">Nombre</label>
-                    <input type="text" name="firstname" id="firstname" placeholder="<Nombre>" class="form-control"/>
-                </div>
-            </div>
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="name" class="col-md-4 control-label">Nombre</label>
 
-            <div class="form-group">
-                <div class="col-sm-4">
-                    <label for="lastname">Apellidos</label>
-                    <input type="text" name="lastname" id="lastname" placeholder="<Apellidos>" class="form-control"/>
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control" name="name"
+                                           value="{{ old('name') }}" required autofocus>
+
+                                    @if ($errors->has('name'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
+                                <label for="surname" class="col-md-4 control-label">Apellidos</label>
+
+                                <div class="col-md-6">
+                                    <input id="surname" type="text" class="form-control" name="surname"
+                                           value="{{ old('surname') }}" required autofocus>
+
+                                    @if ($errors->has('surname'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('surname') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                                <label for="surname" class="col-md-4 control-label">Dirección</label>
+
+                                <div class="col-md-6">
+                                    <input id="address" type="text" class="form-control" name="address"
+                                           value="{{ old('address') }}" required autofocus>
+
+                                    @if ($errors->has('address'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">E-Mail</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email"
+                                           value="{{ old('email') }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                <label for="phone" class="col-md-4 control-label">Teléfono</label>
+
+                                <div class="col-md-6">
+                                    <input id="phone" type="text" class="form-control" name="phone"
+                                           value="{{ old('phone') }}" required autofocus>
+
+                                    @if ($errors->has('phone'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('phone') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Aceptar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-8">
-                    <label for="adress">Dirección</label>
-                    <input type="adress" name="adress" id="<Dirección>" placeholder="<Dirección>" class="form-control"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-3">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="<Email>" class="form-control"
-                           data-validation="email"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-2">
-                    <label for="phone">Teléfono</label>
-                    <input type="phone" name="phone" id="phone" placeholder="<Teléfono>" class="form-control"/>
-                </div>
-            </div>
-            <div class="col-sm-offset-3 col-sm-10">
-                <button type="submit">Registrar</button>
             </div>
         </div>
-    </form>
-</div>
-<script>
-    $.validate({
-        lang: 'es'
-    });
-</script>
+    </div>
+@endsection
