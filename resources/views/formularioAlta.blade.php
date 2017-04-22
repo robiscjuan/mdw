@@ -9,14 +9,14 @@
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
-                            <div class="form-group{{ $errors->has('id') ? ' has-error' : '' }}">
-                                <label for="id" class="col-md-4 control-label">NIF</label>
+                            <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">
+                                <label for="nif" class="col-md-4 control-label">NIF</label>
 
                                 <div class="col-md-6">
-                                    <input id="id" type="id" class="form-control" name="id" required>
-                                    @if ($errors->has('id'))
+                                    <input id="id" type="nif" class="form-control" name="nif" required>
+                                    @if ($errors->has('nif'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('id') }}</strong>
+                                            <strong>{{ $errors->first('nif') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -37,16 +37,16 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
-                                <label for="surname" class="col-md-4 control-label">Apellidos</label>
+                            <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
+                                <label for="last_name" class="col-md-4 control-label">Apellidos</label>
 
                                 <div class="col-md-6">
-                                    <input id="surname" type="text" class="form-control" name="surname"
-                                           value="{{ old('surname') }}" required autofocus>
+                                    <input id="last_name" type="text" class="form-control" name="last_name"
+                                           value="{{ old('last_name') }}" required autofocus>
 
-                                    @if ($errors->has('surname'))
+                                    @if ($errors->has('last_name'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('surname') }}</strong>
+                                        <strong>{{ $errors->first('last_name') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -82,16 +82,16 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                                <label for="phone" class="col-md-4 control-label">Teléfono</label>
+                            <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
+                                <label for="phone_number" class="col-md-4 control-label">Teléfono</label>
 
                                 <div class="col-md-6">
-                                    <input id="phone" type="text" class="form-control" name="phone"
-                                           value="{{ old('phone') }}" required autofocus>
+                                    <input id="phone_number" type="text" class="form-control" name="phone_number"
+                                           value="{{ old('phone_number') }}" required autofocus>
 
-                                    @if ($errors->has('phone'))
+                                    @if ($errors->has('phone_number'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('phone') }}</strong>
+                                            <strong>{{ $errors->first('phone_number') }}</strong>
                                         </span>
                                     @endif
                                 </div>
