@@ -50,3 +50,7 @@ Route::get('/home', 'HomeController@index');
 Route::resource('booking', 'BookingController', ['only' => [
     'store'
 ]]);
+
+Route::post('/booking/create', 'BookingController@store');
+
+Route::post('/client/create', 'ClientController@store');

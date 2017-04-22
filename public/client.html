@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <title>Title</title>
+</head>
+<!--
+$fill= array (
+'name' => 'emilio',
+'last_name'=> 'castellano',
+'address'=> 'direccion',
+'phone_number' => '666666666',
+'email'=>'ecastel@gmail.com',
+'nif'=>'505050505');
+-->
+<body>
+    <br>
+    <form action="/client/create" method="POST">
+        <div class="row">
+            <div class="col-sm-4">
+            <div class="mt10">Name:</div>
+            <input type="string" required name="name" value="" placeholder="Name" class="request-input mb10">
+        </div>
+        <div class="col-sm-4">
+            <div class="LastName">Lastname</div>
+            <input type="string" required name="lastname" value="" placeholder="Lastname" class="request-input mb10">
+        </div>
+        <div class="col-sm-4">
+            <div class="mt10">Address</div>
+            <input type="string" required name="address" value="" placeholder="address" class="request-input mb10">
+        </div>
+        <div class="col-sm-4">
+            <div class="mt10">phone</div>
+            <input type="string" required name="phone" value="" placeholder="phone" class="request-input mb10">
+        </div>
+        <div class="col-sm-4">
+            <div class="mt10">email</div>
+            <input type="email" required name="email" value="" placeholder="email@tuemail.com" class="request-input mb10">
+        </div>
+        <div class="col-sm-4">
+            <div class="mt10">Nif</div>
+            <input type="string" required name="nif" value="" placeholder="01234556-X" class="request-input mb10">
+        </div>
+
+</div>
+<div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-block button-orange">Send</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
+
