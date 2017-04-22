@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
+use App\Room;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -35,13 +37,13 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        echo "<pre>";
-        dd ($request);
-        //dd(Inputall());
-        //dd(Input::get('equipment_url'));
-        //dd(Input::get('starting_date'));
-
+        $client = Client::create($request->all());
+        $room = Room::find(1);
+        $data = [
+            1 => ['room_id' => 1, 'client_id' => $client->id,'start_hour'=>$request->start_hour,'finish_hour'=>$request->finish_hour],
+        ];
+        $room->clients()->attach($data);
+        return response($client,200);
     }
 
     /**

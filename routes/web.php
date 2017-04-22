@@ -46,3 +46,7 @@ Route::get('/reserva', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('booking', 'BookingController', ['only' => [
+    'store'
+]]);
