@@ -1,0 +1,161 @@
+*{
+    border: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: #ccc;
+}
+#contenedor{
+    
+    justify-content:center;
+    background: grey;
+    height:804px;
+    width: 902px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid black;
+}
+
+contenedor_foto{
+    position: relative;
+    width: 100%; /* for IE 6 */
+}
+
+titulo {
+     
+    position: absolute;
+    font-size: 500%;
+    color: greenyellow;
+    top: 450px;
+    padding-left: 310px ;
+    width: 100;
+    font-family: fantasy
+}  
+
+subtitulo {
+    position: absolute;
+    font-size: 200%;
+    color: greenyellow;
+    top: 525px;
+    padding-left: 370px ;
+    right: auto;
+    width: 100;
+    font-family: fantasy
+}            
+
+foto_trans{
+    position: absolute;
+    font-size: 200%;
+    color: greenyellow;
+    top: 200px;
+    padding-left: 350px ;
+    right: auto;
+    width: 100;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+#contenedor_noticias{
+    
+    width: 900px;
+    height: 240px;    
+}
+section#clases{
+    background-color:darkcyan;   
+    width: 300px;
+    height: 240px;
+    float:left;
+}
+
+section#campeonatos{
+    background-color:brown;  
+    width: 300px;
+    height: 240px;
+    float:left;
+}
+section#tienda{
+    background-color:orange;
+    width: 300px;
+    height: 240px;
+    float:left;
+}
+
+
+p1{
+    padding-left: 70px;
+    font-size: 30px;
+    color:#2E2E2E;
+    font-family: fantasy  
+}
+p2{
+    padding-left: 10px;
+    font-size: 18px;
+    color: #2E2E2E;
+    font-family: sans-serif;
+}
+
+
+body{
+    background-color: #525252;
+}
+.centered-form{
+	margin-top: 100px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+#contenedor_instalaciones{
+   justify-content:center;
+    width: 902px;
+    height:452px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    
+}
+section#mapa{
+    background-color:firebrick;   
+    width: 600px;
+    height: 452px;
+    float:left;
+    border: 1px solid black;
+}
+
+section#texto{
+    background-color:darkcyan;  
+    width: 300px;
+    height: 452px;
+    float:left;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
