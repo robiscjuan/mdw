@@ -16,6 +16,6 @@ class Room extends Model
 
     public function clients()
     {
-        return $this->belongsToMany('App\Client');
+        return $this->belongsToMany('App\Client')->withPivot('start_hour')->withPivot('finish_hour')->withTimestamps();
     }
 }
