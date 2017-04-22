@@ -30,9 +30,9 @@ Route::get('/login-cliente', function () {
 Route::get('/registro', function () {
     return view('registro');
 })->name('registro');
-Route::get('/reserva', function () {
-    return view('reserva');
-})->name('reserva');
+Route::get('/reservas', function () {
+    return view('reservas');
+})->name('reservas');
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::resource('booking', 'BookingController', ['only' => [

@@ -1,6 +1,18 @@
 @extends('layouts.front')
 
 @section('content')
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
     <div class="container">
         <div class="row centered-form">
             <div class="col-xs-8 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -28,8 +40,8 @@
                                         <p> Fecha:<input type="date" name="day" id="day" class="form-control input-sm"
                                                          placeholder="Fecha"></p>
                                         <p> Hora inicio:
-                                            <select name="fecha_inicio" id="fecha_inicio" class="form-control input-sm"
-                                                    placeholder="Fecha_inicio">
+                                            <select name="hora_inicio" id="hora_inicio" class="form-control input-sm"
+                                                    placeholder="hora_inicio">
                                                 <option></option>
                                                 <option>00:00</option>
                                                 <option>01:00</option>
@@ -55,11 +67,11 @@
                                                 <option>21:00</option>
                                                 <option>22:00</option>
                                                 <option>23:00</option>
-                                                <option>24:00</option>
+                                                
                                             </select>
-                                        <p> Hora inicio:
-                                            <select name="fecha_fin" id="fecha_fin" class="form-control input-sm"
-                                                    placeholder="Fecha_fin">
+                                        <p> Hora fin:
+                                            <select name="hora_fin" id="hora_fin" class="form-control input-sm"
+                                                    placeholder="hora_fin">
                                                 <option></option>
                                                 <option>00:00</option>
                                                 <option>01:00</option>
@@ -85,11 +97,11 @@
                                                 <option>21:00</option>
                                                 <option>22:00</option>
                                                 <option>23:00</option>
-                                                <option>24:00</option>
+                                                
                                             </select>
                                         <p> Habitación:
-                                            <select name="fecha_fin" id="fecha_fin" class="form-control input-sm"
-                                                    placeholder="Fecha_fin">
+                                            <select name="habitacion" id="habitacion" class="form-control input-sm"
+                                                    placeholder="habitacion">
                                                 <option></option>
                                                 <option>Individual</option>
                                                 <option>Doble 1 cama</option>
@@ -113,20 +125,10 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 
     <script>
 
-
+/*
         $(document).ready(function () {
 
             $("#boton_reservas").click(function () {
@@ -142,7 +144,7 @@
 
                 var hoy = Date.now();
 
-                //alert("fecha hoy : " + hoy);
+                alert("fecha hoy : " + hoy);
 
 
                 alert("fecha  de reserva en milisegundos: " + day);
@@ -172,6 +174,6 @@
             });
         });
 
-
+*/
     </script>
 @endsection

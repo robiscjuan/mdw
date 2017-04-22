@@ -65,6 +65,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
+        /*
         $(document).ready(function () {
 
             $("#boton_registro").click(function () {
@@ -127,7 +128,7 @@
 
                 );
 
-            //$.get("http://salonso.etsisi.upm.es/miw_serv/padel/email.php",{ email: email},
+            $.get("http://salonso.etsisi.upm.es/miw_serv/padel/email.php",{ email: email},
             function (data) {
 
                 if (data == '{"errorMessage":"no error"}') {
@@ -183,5 +184,6 @@
         })
         ;
         //Nombre de usuario:
+        */
     </script>
 @endsection
