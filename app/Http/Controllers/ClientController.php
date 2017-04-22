@@ -38,7 +38,7 @@ class ClientController extends Controller
     {
         //
         echo "<pre>";
-        $fill= array (
+        /*$fill= array (
             'name' => 'client',
             'last_name'=> 'castellano',
             'address'=> 'direccion',
@@ -48,14 +48,16 @@ class ClientController extends Controller
         //
         $client=new Client;
         $client->fill($fill);
-        $client->save();
+        $client->save();*/
 
-        // con esto no funciona
-        //dd($request->all());
+        $client = Client::create($request->all());
+
 
         // Sacar el numero de clientes
         $allClients = Client::all();
         echo "Total clients: ".$client->count();
+        return response($client,200);
+
     }
 
     /**
