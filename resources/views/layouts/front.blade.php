@@ -58,8 +58,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
                         <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
-
                     @else
                         <li>
                             <a style="cursor: default" href="#" >  Autenticado como: {{ Auth::user()->name }}</a>
