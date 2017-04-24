@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use App\Room;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -36,28 +37,31 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        echo "<pre>";
-        /*$fill= array (
-            'name' => 'client',
-            'last_name'=> 'castellano',
-            'address'=> 'direccion',
-            'phone_number' => '666666666',
-            'email'=>'ecastel@gmail.com',
-            'nif'=>'505050505');
-        //
-        $client=new Client;
-        $client->fill($fill);
-        $client->save();*/
+        try {
+            //
+            echo "<pre>";
+            /*$fill= array (
+                'name' => 'client',
+                'last_name'=> 'castellano',
+                'address'=> 'direccion',
+                'phone_number' => '666666666',
+                'email'=>'ecastel@gmail.com',
+                'nif'=>'505050505');
+            //
+            $client=new Client;
+            $client->fill($fill);
+            $client->save();*/
 
-        $client = Client::create($request->all());
+            $client = Client::create($request->all());
 
 
-        // Sacar el numero de clientes
-        $allClients = Client::all();
-        echo "Total clients: ".$client->count();
-        return response($client,200);
-
+            // Sacar el numero de clientes
+            $allClients = Client::all();
+            echo "Total clients: " . $client->count();
+            return response($client, 200);
+        }catch (QueryException $e){
+            return response(view('reservaKO'), 400);
+        }
     }
 
     /**
