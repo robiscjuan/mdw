@@ -8,7 +8,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -22,25 +21,26 @@
                     </div>
                     <div class="panel-body">
 
-                        <form name="miformulario" method="get" action="" id="miformulario">
+                        <form name="reserva" method="post" action="/booking" id="reserva">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-
-                                        <p> Hotel:
-                                            <select name="hotel" id="hotel" class="form-control input-sm"
-                                                    placeholder="Hotel">
-                                                <option></option>
-                                                <option>Hotel 1</option>
-                                                <option>Hotel 2</option>
-                                                <option>Hotel 3</option>
-                                            </select>
-                                        </p>
-
+                                        <h3>Datos del usuario:</h3>
+                                        <p> Nombre:<input type="text" name="name" id="name" class="form-control input-sm"
+                                                         placeholder="Nombre"></p>
+                                        <p> Apellidos:<input type="text" name="last_name" id="last_name" class="form-control input-sm"
+                                                         placeholder="Apellidos"></p>
+                                        <p> Dirección:<input type="text" name="address" id="address" class="form-control input-sm"
+                                                         placeholder="Dirección"></p>
+                                        <p> Teléfono:<input type="number" name="phone_number" id="phone_number" class="form-control input-sm"
+                                                         placeholder="Teléfono"></p>
+                                        <p> Email:<input type="email" name="email" id="email" class="form-control input-sm"
+                                                         placeholder="Email"></p>
+                                        <h3>Datos de la reserva:</h3>
                                         <p> Fecha:<input type="date" name="day" id="day" class="form-control input-sm"
                                                          placeholder="Fecha"></p>
                                         <p> Hora inicio:
-                                            <select name="hora_inicio" id="hora_inicio" class="form-control input-sm"
+                                            <select name="start_hour" id="start_hour" class="form-control input-sm"
                                                     placeholder="hora_inicio">
                                                 <option></option>
                                                 <option>00:00</option>
@@ -70,7 +70,7 @@
                                                 
                                             </select>
                                         <p> Hora fin:
-                                            <select name="hora_fin" id="hora_fin" class="form-control input-sm"
+                                            <select name="finish_hour" id="finish_hour" class="form-control input-sm"
                                                     placeholder="hora_fin">
                                                 <option></option>
                                                 <option>00:00</option>
@@ -113,8 +113,7 @@
                             </div>
 
 
-                            <input type="button" value="Reservar" id="boton_reservas" class="btn btn-info btn-block"
-                                   onclick="alert(data)">
+                            <input type="submit" value="Reservar" id="boton_reservas" class="btn btn-info btn-block">
 
 
                         </form>
@@ -124,56 +123,4 @@
             </div>
         </div>
     </div>
-
-
-    <script>
-
-/*
-        $(document).ready(function () {
-
-            $("#boton_reservas").click(function () {
-                var fecha = $("#day").val();
-                var anio = fecha.substring(0, 4);
-                var mes = fecha.substring(5, 7);
-                var dia = fecha.substring(8, 10);
-                //alert(day.substring(0,4));
-                //alert(day.substring(5,7));
-                //alert(day.substring(8,10));
-
-                var day = Date.UTC(anio, mes - 1, dia);
-
-                var hoy = Date.now();
-
-                alert("fecha hoy : " + hoy);
-
-
-                alert("fecha  de reserva en milisegundos: " + day);
-
-                if (day < hoy) {
-                    $('input[id="day"]').css("border", "2px solid red");
-                    $('input[id="day"]').css("box-shadow", "0 0 3px red");
-                    alert("La fecha de reserva debe ser superior a la fecha actual");
-
-
-                } else {
-                    $.get("http://salonso.etsisi.upm.es/miw_serv/padel/disponibilidad.php", {day: day},
-                        function jsonParse(data) {
-
-                            var horario = JSON.parse(data);
-                            var salida = "";
-                            //for(var i = 0; i < horario.length; i++ ){
-                            for (i in horario) {
-
-                                salida += 'PISTA:  ' + horario[i].courtId + ' --- HORA:  ' + horario[i].date + '\n';
-                            }
-                            alert(salida);
-
-
-                        });
-                }
-            });
-        });
-
-*/
-    </script>
 @endsection
