@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //To support Laravel 5.4 in older versions of Mysql (<v5.7.7 ) and MariaDb
+        Schema::defaultStringLength(191);
     }
 
     /**
