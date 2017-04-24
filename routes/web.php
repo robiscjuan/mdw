@@ -18,7 +18,7 @@ Route::get('/formulario-alta', function () {
 Route::get('/reserva-correcta', function () {
     return view('reservaOK');
 });
-Route::get('/reserva-errónea', function () {
+Route::get('/reserva-erronea', function () {
     return view('reservaKO');
 });
 Route::get('/instalaciones', function () {
@@ -34,7 +34,7 @@ Route::get('/reservas', function () {
     return view('reservas');
 })->name('reservas');
 Auth::routes();
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('adminPanel');
 Route::resource('booking', 'BookingController', ['only' => [
     'store'
 ]]);

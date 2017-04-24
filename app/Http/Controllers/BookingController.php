@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use App\Room;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use League\Flysystem\Exception;
 
 class BookingController extends Controller
 {
@@ -37,13 +39,17 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $client = Client::create($request->all());
-        $room = Room::find(1);
-        $data = [
-            1 => ['room_id' => 1, 'client_id' => $client->id,'start_hour'=>$request->start_hour,'finish_hour'=>$request->finish_hour],
-        ];
-        $room->clients()->attach($data);
-        return response($client,200);
+        try {
+            $client = Client::create($request->all());
+            $room = Room::find(1);
+            $data = [
+                1 => ['room_id' => 1, 'client_id' => $client->id, 'start_hour' => $request->day . ' ' . $request->start_hour, 'finish_hour' => $request->day . ' ' . $request->finish_hour],
+            ];
+            $room->clients()->attach($data);
+            return response(view('reservaOK'), 200);
+        }catch (QueryException $e){
+            return response(view('reservaKO'), 400);
+        }
     }
 
     /**
