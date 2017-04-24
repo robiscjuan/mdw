@@ -22,30 +22,6 @@
             padding-right: 0px;
         }
     </style>
-    
-    <script>
-
-        $(document).ready(function () {
-
-            $("#contenido").load("views/inicio.blade.php");
-
-            $('#inicio').click(function () {
-                $("#contenido").load("views/inicio.blade.php");
-            });
-            $('#instalaciones').click(function () {
-                $("#contenido").load("views/instalaciones.blade.php");
-            });
-            $('#reservas').click(function () {
-                $("#contenido").load("views/reservas.blade.php");
-            });
-            $('#login').click(function () {
-                $("#contenido").load("views/login.blade.php");
-            });
-            $('#registro').click(function () {
-                $("#contenido").load("views/registro.blade.php");
-            });
-        });
-    </script>
 
 </head>
 
@@ -71,16 +47,35 @@
             <div class="collapse navbar-collapse" id="navegacion-fm">
                 <ul class="nav navbar-nav">
                     <li><a href="{{route('home')}}" id="inicio">Inicio</a></li>
+                    <li><a href="{{route('reservas')}}" id="reservas">Reservas</a></li>
                     <li><a href="{{route('instalaciones')}}" id="instalaciones"><span
                                     class="glyphicon glyphicon-map-marker"></span>
                             Instalaciones<span class="sr-only">(current)</span></a></li>
-                    <li><a href="{{route('reservas')}}" id="reservas">Reservas</a></li>
+                    @if (!Auth::guest())
+                        <li><a href="{{route('adminPanel')}}" id="reservas">Ver reservas</a></li>
+                        @endif
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{route('registro')}}" id="registro"> <span
-                                    class="glyphicon glyphicon-user"> Registro </span></a></li>
-                    <li><a href="{{route('loginCliente')}}" id="login"> <span
-                                    class="glyphicon glyphicon-log-in"> Login </span></a></li>
+                    @if (Auth::guest())
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+
+                    @else
+                        <li>
+                            <a style="cursor: default" href="#" >  Autenticado como: {{ Auth::user()->name }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
